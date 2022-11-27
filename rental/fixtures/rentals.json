@@ -1,0 +1,66 @@
+[
+  {
+    "model": "rental.rental",
+    "pk": 1,
+    "fields": {
+      "name": "Rental-1"
+    }
+  },
+  {
+    "model": "rental.rental",
+    "pk": 2,
+    "fields": {
+      "name": "Rental-2"
+    }
+  },
+  {
+    "model": "rental.reservation",
+    "pk": 1,
+    "fields": {
+      "rent": 1,
+      "rental_id": "Res-1",
+      "checkin": "2022-01-01",
+      "checkout": "2022-01-13"
+    }
+  },
+  {
+    "model": "rental.reservation",
+    "pk": 2,
+    "fields": {
+      "rent": 1,
+      "rental_id": "Res-2",
+      "checkin": "2022-01-20",
+      "checkout": "2022-02-10"
+    }
+  },
+  {
+    "model": "rental.reservation",
+    "pk": 3,
+    "fields": {
+      "rent": 1,
+      "rental_id": "Res-3",
+      "checkin": "2022-02-20",
+      "checkout": "2022-03-10"
+    }
+  },
+  {
+    "model": "rental.reservation",
+    "pk": 4,
+    "fields": {
+      "rent": 2,
+      "rental_id": "Res-4",
+      "checkin": "2022-01-02",
+      "checkout": "2022-01-20"
+    }
+  },
+  {
+    "model": "rental.reservation",
+    "pk": 5,
+    "fields": {
+      "rent": 2,
+      "rental_id": "Res-5",
+      "checkin": "2022-01-20",
+      "checkout": "2022-02-11"
+    }
+  }
+]

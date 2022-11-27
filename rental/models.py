@@ -13,15 +13,20 @@ class Rental(models.Model):
 
 
 class Reservation(models.Model):
-    rental = models.ForeignKey(Rental, on_delete=models.CASCADE)
+    rent = models.ForeignKey(Rental, on_delete=models.CASCADE)
+    rental_id = models.CharField(max_length=100)
     checkin = models.DateField()
     checkout = models.DateField()
 
     def __str__(self):
         return f"{self.checkin} - {self.checkout}"
 
-    # def get_absolute_url(self):
-    #     return reverse('reservation-detail', kwargs={'pk': self.pk})
-
     class Meta:
-        ordering = ['checkin']
+        ordering = ['rental_id']
+        constraints = [
+            models.CheckConstraint(
+                check=(models.Q(checkin__lte=models.F('checkout'))
+                       ),
+                name='checkin_lte_checkout'
+            ),
+        ]
